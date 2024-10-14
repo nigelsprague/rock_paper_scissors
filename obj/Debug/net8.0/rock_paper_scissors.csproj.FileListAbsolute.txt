@@ -12,3 +12,4 @@ C:\Users\sprag\source\codeworks\labs\week-csharp\rock_paper_scissors\obj\Debug\n
 C:\Users\sprag\source\codeworks\labs\week-csharp\rock_paper_scissors\obj\Debug\net8.0\rock_paper_scissors.pdb
 C:\Users\sprag\source\codeworks\labs\week-csharp\rock_paper_scissors\obj\Debug\net8.0\rock_paper_scissors.genruntimeconfig.cache
 C:\Users\sprag\source\codeworks\labs\week-csharp\rock_paper_scissors\obj\Debug\net8.0\ref\rock_paper_scissors.dll
+C:\Users\sprag\source\codeworks\labs\week-csharp\rock_paper_scissors\obj\Debug\net8.0\rock_paper_scissors.sourcelink.json

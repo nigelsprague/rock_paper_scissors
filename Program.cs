@@ -2,11 +2,64 @@
 
 internal class Program
 {
+
+  static int PlayerWins = 0;
+  static int ComputerWins = 0;
   private static void Main()
   {
     Console.WriteLine("Rock, Paper, Scissors");
-    string userHand = ChooseHand();
-    string computerHand = GetComputerHand();
+    string? userHand = ChooseHand();
+    string? computerHand = GetComputerHand();
+    Console.Clear();
+    Console.WriteLine($"You chose {userHand}");
+    Console.WriteLine($"Computer chose {computerHand}");
+
+    if (userHand == computerHand)
+    {
+      Console.WriteLine("Tie!");
+    }
+    if (userHand == "Rock" & computerHand == "Paper")
+    {
+      Console.WriteLine("Computer wins!");
+      ComputerWins++;
+    }
+    if (userHand == "Rock" & computerHand == "Scissors")
+    {
+      Console.WriteLine("You win!");
+      PlayerWins++;
+    }
+    if (userHand == "Paper" & computerHand == "Scissors")
+    {
+      Console.WriteLine("Computer wins!");
+      ComputerWins++;
+    }
+    if (userHand == "Paper" & computerHand == "Rock")
+    {
+      Console.WriteLine("You win!");
+      PlayerWins++;
+    }
+    if (userHand == "Scissors" & computerHand == "Paper")
+    {
+      Console.WriteLine("You win!");
+      PlayerWins++;
+    }
+    if (userHand == "Scissors" & computerHand == "Rock")
+    {
+      Console.WriteLine("Computer wins!");
+      ComputerWins++;
+    }
+
+    Console.WriteLine($"You: {PlayerWins} || CPU: {ComputerWins}");
+
+    Console.WriteLine("Do you want to play again? y/n");
+    var playAgain = Console.ReadKey().KeyChar;
+    if (playAgain == 'y') Main();
+    else
+    {
+      Console.Clear();
+      Console.WriteLine("FINAL SCORE:");
+      Console.WriteLine($"You: {PlayerWins} || CPU: {ComputerWins}");
+    }
   }
 
   static string ChooseHand()
@@ -30,15 +83,15 @@ internal class Program
     }
     if (userInput == "1")
     {
-      Console.WriteLine("Rock");
+      return "Rock";
     }
     if (userInput == "2")
     {
-      Console.WriteLine("Paper");
+      return "Paper";
     }
     if (userInput == "3")
     {
-      Console.WriteLine("Scissors");
+      return "Scissors";
     }
     return "";
   }
@@ -47,15 +100,15 @@ internal class Program
     int randomNumber = new Random().Next(1, 4);
     if (randomNumber == 1)
     {
-      Console.WriteLine("Rock");
+      return "Rock";
     }
     if (randomNumber == 2)
     {
-      Console.WriteLine("Paper");
+      return "Paper";
     }
     if (randomNumber == 3)
     {
-      Console.WriteLine("Scissors");
+      return "Scissors";
     }
     return "";
   }
