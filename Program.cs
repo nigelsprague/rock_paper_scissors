@@ -14,39 +14,19 @@ internal class Program
     Console.WriteLine($"You chose {userHand}");
     Console.WriteLine($"Computer chose {computerHand}");
 
+    if (userHand == "Rock" && computerHand == "Scissors" || userHand == "Scissors" && computerHand == "Paper" || userHand == "Paper" && computerHand == "Rock")
+    {
+      Console.WriteLine("You win!");
+      PlayerWins++;
+    }
+    if (userHand == "Paper" && computerHand == "Scissors" || userHand == "Rock" && computerHand == "Paper" || userHand == "Scissors" && computerHand == "Rock")
+    {
+      Console.WriteLine("Computer wins!");
+      ComputerWins++;
+    }
     if (userHand == computerHand)
     {
       Console.WriteLine("Tie!");
-    }
-    if (userHand == "Rock" & computerHand == "Paper")
-    {
-      Console.WriteLine("Computer wins!");
-      ComputerWins++;
-    }
-    if (userHand == "Rock" & computerHand == "Scissors")
-    {
-      Console.WriteLine("You win!");
-      PlayerWins++;
-    }
-    if (userHand == "Paper" & computerHand == "Scissors")
-    {
-      Console.WriteLine("Computer wins!");
-      ComputerWins++;
-    }
-    if (userHand == "Paper" & computerHand == "Rock")
-    {
-      Console.WriteLine("You win!");
-      PlayerWins++;
-    }
-    if (userHand == "Scissors" & computerHand == "Paper")
-    {
-      Console.WriteLine("You win!");
-      PlayerWins++;
-    }
-    if (userHand == "Scissors" & computerHand == "Rock")
-    {
-      Console.WriteLine("Computer wins!");
-      ComputerWins++;
     }
 
     Console.WriteLine($"You: {PlayerWins} || CPU: {ComputerWins}");
@@ -71,29 +51,20 @@ internal class Program
     Console.WriteLine("3. Scissors");
 
     string? userInput = Console.ReadLine();
-    if (userInput != "1")
-    {
-      if (userInput != "2")
-      {
-        if (userInput != "3")
-        {
-          throw new Exception("Not a valid input, try again.");
-        }
-      }
-    }
-    if (userInput == "1")
+
+    if (userInput == "1" || userInput == "z" || userInput == "r")
     {
       return "Rock";
     }
-    if (userInput == "2")
+    if (userInput == "2" || userInput == "x" || userInput == "p")
     {
       return "Paper";
     }
-    if (userInput == "3")
+    if (userInput == "3" || userInput == "c" || userInput == "s")
     {
       return "Scissors";
     }
-    return "";
+    throw new Exception("Not a valid input, try again.");
   }
   static string? GetComputerHand()
   {
